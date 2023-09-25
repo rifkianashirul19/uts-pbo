@@ -1,6 +1,6 @@
 <?php
 include 'connection.php';
-include 'template/header.php';
+include 'assets/template/header.php';
 ?>
 
 <?php

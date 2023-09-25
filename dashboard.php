@@ -1,6 +1,6 @@
 <?php
 include 'connection.php';
-include 'template/header.php';
+include 'assets/template/header.php';
 include 'tampil.php';
 ?>
 
@@ -18,6 +18,8 @@ if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
+
+$current_page = isset($_GET['page']) ? $_GET['page'] : ''; // Ambil parameter page dari URL jika ada
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +34,12 @@ if (!isset($_SESSION['username'])) {
         <div class="bg-white sidebar-menu" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-5 fw-bold text-uppercase border-bottom"><i class="fa-solid fa-hospital"></i> Rumah Sakit</div>
             <div class="list-group list-group-flush my-3">
-                <a href="dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="dashboard.php?page=tampil_pasien" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-user me-2"></i>Pasien</a>
-                <a href="dashboard.php?page=tampil_dokter" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-solid fa-user-doctor me-2"></i>Dokter</a>
-                <a href="dashboard.php?page=tampil_obat" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-solid fa-capsules me-2"></i></i>Obat</a>
-                <a href="dashboard.php?page=tampil_poliklinik" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-solid fa-house-chimney-medical me-2"></i>Poli Klinik</a>
-                <a href="dashboard.php?page=tampil_rekmed" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-solid fa-file me-2"></i>Rekam Medis</a>
+                <a href="dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text <?php echo (empty($current_page) || $current_page === 'dashboard') ? 'active' : ''; ?>"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="dashboard.php?page=tampil_pasien" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php echo ($current_page === 'tampil_pasien') ? 'active' : ''; ?>"><i class="fas fa-user me-2"></i>Pasien</a>
+                <a href="dashboard.php?page=tampil_dokter" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php echo ($current_page === 'tampil_dokter') ? 'active' : ''; ?>"><i class="fas fa-solid fa-user-doctor me-2"></i>Dokter</a>
+                <a href="dashboard.php?page=tampil_obat" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php echo ($current_page === 'tampil_obat') ? 'active' : ''; ?>"><i class="fas fa-solid fa-capsules me-2"></i></i>Obat</a>
+                <a href="dashboard.php?page=tampil_poliklinik" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php echo ($current_page === 'tampil_poliklinik') ? 'active' : ''; ?>"><i class="fas fa-solid fa-house-chimney-medical me-2"></i>Poli Klinik</a>
+                <a href="dashboard.php?page=tampil_rekmed" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php echo ($current_page === 'tampil_rekmed') ? 'active' : ''; ?>"><i class="fas fa-solid fa-file me-2"></i>Rekam Medis</a>
                 <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
