@@ -1,7 +1,7 @@
 <?php
-include 'connection.php';
-include 'assets/template/header.php';
-include 'tampil.php';
+include('connection.php');
+include('assets/template/header.php');
+include('tampil.php');
 ?>
 
 <?php
@@ -70,6 +70,26 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : ''; // Ambil parameter pa
                 case 'tampil_rekmed':
                     # code...
                     include 'rekmed.php';
+                    break;
+                case 'tambah_pasien':
+                    # code...
+                    include 'tambahpasien.php';
+                    break;
+                case 'tambah_dokter':
+                    # code...
+                    include 'tambahdokter.php';
+                    break;
+                case 'tambah_obat':
+                    # code...
+                    include 'tambahobat.php';
+                    break;
+                case 'tambah_poliklinik':
+                    # code...
+                    include 'tambahklinik.php';
+                    break;
+                case 'tambah_rekmed':
+                    # code...
+                    include 'tambahrekmed.php';
                     break;
                 default:
                     #code...

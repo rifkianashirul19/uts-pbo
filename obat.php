@@ -57,7 +57,7 @@ $total_pages = ceil($total_records / $records_per_page);
 <div class="container" style="margin-top:20px">
   <div class="row mb-3">
     <div class="col-md-6">
-      <a href="index.php?page=tambah_obat"><button class="btn btn-dark">Tambah Data</button></a>
+      <a href="dashboard.php?page=tambah_obat"><button class="btn btn-dark">Tambah Data</button></a>
     </div>
     <div class="col-md-6">
       <form action="dashboard.php?page=tampil_obat" method="POST">

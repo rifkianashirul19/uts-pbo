@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include('connection.php');
 
 //Delete User
 if (isset($_GET['userid'])) {

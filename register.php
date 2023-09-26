@@ -1,6 +1,6 @@
 <?php
-include 'connection.php';
-include 'assets/template/header.php';
+include('connection.php');
+include('assets/template/header.php');
 ?>
 
 <?php
@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $email = mysqli_real_escape_string($koneksi, $email);
-    $Lastname = mysqli_real_escape_string($koneksi, $Lastname);
     $Username = mysqli_real_escape_string($koneksi, $Username);
     $Password = mysqli_real_escape_string($koneksi, $Password);
 
