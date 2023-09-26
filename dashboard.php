@@ -8,7 +8,7 @@ include 'tampil.php';
 session_start();
 
 // Set title
-$title = "Dashboard";
+$title = "Sistem Informasi Rumah Sakit";
 
 // Simpan title dalam session
 $_SESSION['title'] = $title;
@@ -65,7 +65,7 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : ''; // Ambil parameter pa
                     break;
                 case 'tampil_poliklinik':
                     # code...
-                    include 'poli.php';
+                    include 'klinik.php';
                     break;
                 case 'tampil_rekmed':
                     # code...

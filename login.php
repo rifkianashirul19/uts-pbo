@@ -37,14 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <title>Log In</title>
 <style>
   .gradient-custom {
-    /* fallback for old browsers */
-    background: #6a11cb;
-
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    background: #DEFFDB;
   }
 </style>
 <section class="vh-100 gradient-custom">
@@ -70,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password" required />
                 </div>
                 <p class="small mb-2 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                <button class="btn btn-outline-light btn-lg px-5" type="submit" style="background-color : #10A303">Login</button>
               </div>
 
               <div>

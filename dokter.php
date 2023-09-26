@@ -13,23 +13,23 @@ if (isset($_GET['page_no'])) {
 $start_record = ($current_page - 1) * $records_per_page;
 
 if ($current_page == 1) {
-  $query = "SELECT * FROM pasien ORDER BY pasienid ASC LIMIT $records_per_page";
+  $query = "SELECT * FROM dokter ORDER BY dokterid ASC LIMIT $records_per_page";
 } else {
-  $query = "SELECT * FROM pasien ORDER BY pasienid ASC LIMIT $start_record, $records_per_page";
+  $query = "SELECT * FROM dokter ORDER BY dokterid ASC LIMIT $start_record, $records_per_page";
 }
 
 $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
 
-$total_records = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM pasien"));
+$total_records = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM dokter"));
 
 $total_pages = ceil($total_records / $records_per_page);
 ?>
 
-<title>Pasien</title>
+<title>dokter</title>
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
   <div class="d-flex align-items-center">
     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-    <h2 class="fs-2 m-0">Data Pasien</h2>
+    <h2 class="fs-2 m-0">Data dokter</h2>
   </div>
 
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,12 +57,12 @@ $total_pages = ceil($total_records / $records_per_page);
 <div class="container" style="margin-top:20px">
   <div class="row mb-3">
     <div class="col-md-6">
-      <a href="index.php?page=tambah_pasien"><button class="btn btn-dark">Tambah Data</button></a>
+      <a href="index.php?page=tambah_dokter"><button class="btn btn-dark">Tambah Data</button></a>
     </div>
     <div class="col-md-6">
-      <form action="dashboard.php?page=tampil_pasien" method="POST">
+      <form action="dashboard.php?page=tampil_dokter" method="POST">
         <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="Cari Pasien">
+          <input type="text" name="keyword" class="form-control" placeholder="Cari dokter">
           <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </form>
@@ -73,9 +73,9 @@ $total_pages = ceil($total_records / $records_per_page);
       <thead>
         <tr>
           <th>NO.</th>
-          <th>ID Pasien</th>
-          <th>Nama Pasien</th>
-          <th>Jenis Kelamin</th>
+          <th>ID Dokter</th>
+          <th>Nama Dokter</th>
+          <th>Spesialis</th>
           <th>No Telpon</th>
           <th>Alamat</th>
           <th>Aksi</th>
@@ -84,7 +84,7 @@ $total_pages = ceil($total_records / $records_per_page);
       <tbody>
         <?php
         //query ke database SELECT tabel mahasiswa urut berdasarkan id yang paling besar
-        $sql = mysqli_query($koneksi, "SELECT * FROM pasien ORDER BY pasienid ASC LIMIT $start_record, $records_per_page") or die(mysqli_error($koneksi));
+        $sql = mysqli_query($koneksi, "SELECT * FROM dokter ORDER BY dokterid ASC LIMIT $start_record, $records_per_page") or die(mysqli_error($koneksi));
         //jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...
         if (mysqli_num_rows($sql) > 0) {
           //membuat variabel $no untuk menyimpan nomor urut
@@ -95,14 +95,14 @@ $total_pages = ceil($total_records / $records_per_page);
             echo '
 						<tr>
 							<td>' . $no . '</td>
-							<td>' . $data['pasienid'] . '</td>
-							<td>' . $data['nama_pasien'] . '</td>
-							<td>' . $data['kelamin'] . '</td>
+							<td>' . $data['dokterid'] . '</td>
+							<td>' . $data['nama_dokter'] . '</td>
+							<td>' . $data['spesialis'] . '</td>
 							<td>' . $data['notelp'] . '</td>
 							<td>' . $data['alamat'] . '</td>
 							<td>
-								<a href="index.php?page=edit_pasien&pasienid=' . $data['pasienid'] . '" class="btn btn-secondary btn-sm">Edit</a>
-								<a href="delete.php?pasienid=' . $data['pasienid'] . '" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
+								<a href="index.php?page=edit_dokter&dokterid=' . $data['dokterid'] . '" class="btn btn-secondary btn-sm">Edit</a>
+								<a href="delete.php?dokterid=' . $data['dokterid'] . '" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
 						</tr>
 						';
@@ -130,7 +130,7 @@ $total_pages = ceil($total_records / $records_per_page);
         if ($i == $current_page) {
           echo 'active';
         }
-        echo '"><a class="page-link" href="dashboard.php?page=tampil_pasien&page_no=' . $i . '">' . $i . '</a></li>';
+        echo '"><a class="page-link" href="dashboard.php?page=tampil_dokter&page_no=' . $i . '">' . $i . '</a></li>';
       }
       ?>
     </ul>
