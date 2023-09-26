@@ -103,6 +103,7 @@ $total_pages = ceil($total_records / $records_per_page);
 								<a href="index.php?page=edit_rekmed&rekmedid=' . $data['rekmedid'] . '" class="btn btn-secondary btn-sm">Edit</a>
 								<a href="delete.php?rekmedid=' . $data['rekmedid'] . '" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
+              <td></td>
 						</tr>
 						';
             $no++;

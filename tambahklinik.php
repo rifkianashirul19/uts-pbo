@@ -12,19 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $nama_poliklinik = mysqli_real_escape_string($koneksi, $nama_poliklinik);
   $ruang = mysqli_real_escape_string($koneksi, $ruang);
   $lantai = mysqli_real_escape_string($koneksi, $lantai);
-
-  $ruang = preg_replace("/[^0-9]/", "", $ruang);
-
-  // Menambahkan kode negara +62 jika tidak ada
-  if (!preg_match("/^\+62/", $ruang)) {
-    $ruang = "+62" . ltrim($ruang, "0"); // Menghilangkan nol awal jika ada
-  }
-
   // Query INSERT
   $sql = "INSERT INTO poliklinik (nama_poliklinik, ruang, lantai) VALUES ('$nama_poliklinik', '$ruang' , '$lantai')";
 
   if ($koneksi->query($sql) === TRUE) {
-    echo '<script>alert("Data Berhasil ditambahkan."); document.location="dashboard.php?page=tampil_klinik";</script>';
+    echo '<script>alert("Data Berhasil ditambahkan."); document.location="dashboard.php?page=tampil_poliklinik";</script>';
   } else {
     echo "Error: " . $koneksi->error;
   }
@@ -37,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </nav>
 <div class="container-fluid">
-  <form method="POST" action="dashboard.php?page=tambah_klinik" class="m-4">
+  <form method="POST" action="dashboard.php?page=tambah_poliklinik" class="m-4">
     <div class="row">
       <div class="col-md-6 mb-4">
         <div class="form-outline">
@@ -67,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
     <div class="mt-4 pt-2 text-end">
-      <a href="dashboard.php?page=tampil_klinik" class="btn btn-danger">Kembali</a>
+      <a href="dashboard.php?page=tampil_poliklinik" class="btn btn-danger">Kembali</a>
       <input class="btn btn-primary" type="submit" value="Tambah">
     </div>
   </form>

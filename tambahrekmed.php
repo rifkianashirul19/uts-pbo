@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="row">
       <div class="col-md-6 mb-4 pb-2">
         <div class="form-outline">
-          <label class="form-label" for="keluhan">Nomor Telepon</label>
+          <label class="form-label" for="keluhan">Keluhan</label>
           <input type="tel" id="keluhan" class="form-control form-control-lg" name="Keluhan" />
         </div>
       </div>

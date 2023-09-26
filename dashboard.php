@@ -91,6 +91,26 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : ''; // Ambil parameter pa
                     # code...
                     include 'tambahrekmed.php';
                     break;
+                case 'edit_pasien':
+                    # code...
+                    include 'editpasien.php';
+                    break;
+                case 'edit_dokter':
+                    # code...
+                    include 'editdokter.php';
+                    break;
+                case 'edit_obat':
+                    # code...
+                    include 'editobat.php';
+                    break;
+                case 'edit_poliklinik':
+                    # code...
+                    include 'editklinik.php';
+                    break;
+                case 'edit_rekmed':
+                    # code...
+                    include 'editrekmed.php';
+                    break;
                 default:
                     #code...
                     include 'home.php';

@@ -99,7 +99,7 @@ $total_pages = ceil($total_records / $records_per_page);
 							<td>' . $data['harga'] . '</td>
 							<td>' . $data['keterangan'] . '</td>
 							<td>
-								<a href="index.php?page=edit_obat&obatid=' . $data['obatid'] . '" class="btn btn-secondary btn-sm">Edit</a>
+								<a href="dashboard.php?page=edit_obat&obatid=' . $data['obatid'] . '" class="btn btn-secondary btn-sm">Edit</a>
 								<a href="delete.php?obatid=' . $data['obatid'] . '" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
 						</tr>

@@ -101,7 +101,7 @@ $total_pages = ceil($total_records / $records_per_page);
 							<td>' . $data['notelp'] . '</td>
 							<td>' . $data['alamat'] . '</td>
 							<td>
-								<a href="index.php?page=edit_dokter&dokterid=' . $data['dokterid'] . '" class="btn btn-secondary btn-sm">Edit</a>
+								<a href="dashboard.php?page=edit_dokter&dokterid=' . $data['dokterid'] . '" class="btn btn-secondary btn-sm">Edit</a>
 								<a href="delete.php?dokterid=' . $data['dokterid'] . '" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
 						</tr>
