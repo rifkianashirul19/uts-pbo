@@ -34,7 +34,7 @@ if (isset($_GET["id"])) {
     $Keluhan = $row["Keluhan"];
     $Diagnosa = $row["Diagnosa"];
   } else {
-    echo "Medical record not found.";
+    echo "Data Rekam Medis Tidak Ditemukan.";
     exit;
   }
 }

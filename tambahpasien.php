@@ -76,8 +76,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="row">
       <div class="col-md-6 mb-4 pb-2">
         <div class="form-outline">
-          <label class="form-label" for="phoneNumber">Nomor Telepon</label>
-          <input type="tel" id="phoneNumber" class="form-control form-control-lg" name="notelp" />
+          <label class="form-label" for="harga">Nomor Telepon</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">+62</span>
+            <input type="text" id="harga" class="form-control" aria-label="Nomor Telepon dengan +62" name="notelp">
+          </div>
         </div>
       </div>
     </div>

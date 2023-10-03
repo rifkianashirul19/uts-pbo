@@ -100,10 +100,13 @@ $total_pages = ceil($total_records / $records_per_page);
 							<td>' . $data['Keluhan'] . '</td>
 							<td>' . $data['Diagnosa'] . '</td>
 							<td>
-								<a href="index.php?page=edit_rekmed&rekmedid=' . $data['rekmedid'] . '" class="btn btn-secondary btn-sm">Edit</a>
+								<a href="dashboard.php?page=edit_rekmed&rekmedid=' . $data['rekmedid'] . '" class="btn btn-secondary btn-sm">Edit</a>
 								<a href="delete.php?rekmedid=' . $data['rekmedid'] . '" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
-              <td></td>
+              <td>
+              <a href="#" download title="Unduh File PDF">
+              <button><i class="fa-solid fa-download"></i></button>
+              </a></td>
 						</tr>
 						';
             $no++;

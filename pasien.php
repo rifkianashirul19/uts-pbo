@@ -23,6 +23,7 @@ $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
 $total_records = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM pasien"));
 
 $total_pages = ceil($total_records / $records_per_page);
+
 ?>
 
 <title>Pasien</title>
@@ -60,10 +61,12 @@ $total_pages = ceil($total_records / $records_per_page);
       <a href="dashboard.php?page=tambah_pasien"><button class="btn btn-dark">Tambah Data</button></a>
     </div>
     <div class="col-md-6">
-      <form action="dashboard.php?page=tampil_pasien" method="POST">
+      <form action="dashboard.php?page=tampil_pasien" method="GET">
         <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="Cari Pasien">
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" class="form-control" placeholder="Cari Pasien">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
         </div>
       </form>
     </div>

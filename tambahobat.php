@@ -43,9 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="row">
       <div class="col-md-6 mb-4 pb-2">
         <div class="form-outline">
-
           <label class="form-label" for="harga">Harga</label>
-
           <div class="input-group mb-3">
             <span class="input-group-text">Rp</span>
             <input type="text" id="harga" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="harga">
